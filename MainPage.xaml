@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="false"
+             x:Class="ClassChat.MainPage">
+
+    <ScrollView>
+        <Frame>
+
+            <Grid  RowDefinitions="1.5*, 5*,1.5*" RowSpacing="5">
+                <Frame Grid.Row="0" HasShadow="True" >
+                <HorizontalStackLayout  Padding="0"  >
+                    <Label Text="Message" Margin="1" FontSize="70" FontFamily="FontIconRegular"/>
+                    <Label Text="Find everything you like here" Margin="9" VerticalOptions="End"/>
+                </HorizontalStackLayout>
+                </Frame>
+                <Frame x:Name="SignUpFrame" HasShadow="False" VerticalOptions="Center" Grid.Row="1" IsVisible="False">
+                    <VerticalStackLayout x:Name="SignUpVstack" Spacing="10" >
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
+                            <Entry Placeholder="First Name" Grid.Column="0" />
+                            <Entry Placeholder="Second Name" Grid.Column="1" />
+                        </Grid>
+                        <Entry Placeholder="Email"/>
+                        <Entry Placeholder="Password" IsPassword="True"/>
+                        <Entry Placeholder="Confirm Password" IsPassword="True"/>
+                        <Button Text="Create Account"/>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+                <Frame x:Name="SignInFrame" HasShadow="False" VerticalOptions="Center" Grid.Row="1" IsVisible="True">
+                    <VerticalStackLayout Spacing="10" >                        
+                        <Entry Placeholder="Email"/>
+                        <Entry Placeholder="Password" IsPassword="True"/>                       
+                        <Button Text="Log In"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Row="2">
+                    <VerticalStackLayout>
+                    <Label HorizontalOptions="Center" Text="Welcome to the most welcoming world"/>
+                    <Label HorizontalOptions="Center" Text="Welcome to the most welcoming"/>
+                    <Label HorizontalOptions="Center" Text="If you don't have an account"/>
+                        <Label x:Name="SignInLable" HorizontalOptions="Center" Text="Sign Up" TextColor="Green">
+                            <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+        </Frame>
+            
+    </ScrollView>
+
+</ContentPage>
