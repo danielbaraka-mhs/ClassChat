@@ -16,6 +16,9 @@
                 </Frame>
                 <Frame x:Name="SignUpFrame" HasShadow="False" VerticalOptions="Center" Grid.Row="1" IsVisible="False">
                     <VerticalStackLayout x:Name="SignUpVstack" Spacing="10" >
+                        <Frame BackgroundColor="Grey" CornerRadius="50" WidthRequest="100" HeightRequest="100">
+                            <Image Source="dotnet_bot.png"/>
+                        </Frame>
                         <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
                             <Entry Placeholder="First Name" Grid.Column="0" />
                             <Entry Placeholder="Second Name" Grid.Column="1" />
@@ -38,7 +41,7 @@
                 <Frame Grid.Row="2">
                     <VerticalStackLayout>
                     <Label HorizontalOptions="Center" Text="Welcome to the most welcoming world"/>
-                    <Label HorizontalOptions="Center" Text="Welcome to the most welcoming"/>
+                    <Label HorizontalOptions="Center" Text="Welcome to the most welcoming "/>
                     <Label HorizontalOptions="Center" Text="If you don't have an account"/>
                         <Label x:Name="SignInLable" HorizontalOptions="Center" Text="Sign Up" TextColor="Green">
                             <Label.GestureRecognizers>
