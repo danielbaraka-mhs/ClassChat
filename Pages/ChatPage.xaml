@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ClassChat.Pages.ChatPage"
+    Title="Chat">
+
+    <VerticalStackLayout Spacing="6" Padding="10">
+        <Grid ColumnDefinitions="Auto, *" VerticalOptions="Start">
+            <Image Source="{Binding ProfileImage}" WidthRequest="48" HeightRequest="48" Aspect="AspectFill"/>
+            <Label Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center" Grid.Column="1" Margin="8,0,0,0"/>
+        </Grid>
+
+        <CollectionView x:Name="MessagesCollection" ItemsSource="{Binding Messages}" VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="False" Padding="8" CornerRadius="8" Margin="4">
+                        <Frame.Triggers>
+                            <DataTrigger TargetType="Frame" Binding="{Binding IsIncoming}" Value="True">
+                                <Setter Property="BackgroundColor" Value="#EFEFEF" />
+                                <Setter Property="HorizontalOptions" Value="Start" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Frame" Binding="{Binding IsIncoming}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#D0EDFF" />
+                                <Setter Property="HorizontalOptions" Value="End" />
+                            </DataTrigger>
+                        </Frame.Triggers>
+
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="{Binding Text}" />
+                            <Label Text="{Binding Timestamp, StringFormat='{0:g}'}" FontSize="10" HorizontalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid ColumnDefinitions="*, Auto" ColumnSpacing="8">
+            <Entry x:Name="MessageEntry" Placeholder="Write a message..." />
+            <Button Text="Send" Clicked="SendButton_Clicked" />
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>

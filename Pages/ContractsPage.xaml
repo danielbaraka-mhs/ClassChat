@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ClassChat.Pages.ContractsPage"
+    Title="Contracts">
+
+    <CollectionView x:Name="ContactsCollection" ItemsSource="{Binding Contacts}" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10" ColumnDefinitions="60, * , Auto" RowDefinitions="Auto">
+                    <Image Source="{Binding ProfileImage}" WidthRequest="48" HeightRequest="48" Aspect="AspectFill" Grid.Column="0"/>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                        <Label Text="{Binding LastMessage}" FontSize="12" LineBreakMode="TailTruncation"/>
+                    </VerticalStackLayout>
+                    <Label Grid.Column="2" Text="{Binding LastMessageTime, StringFormat='{0:g}'}" FontSize="10" HorizontalOptions="End" VerticalOptions="Start"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>

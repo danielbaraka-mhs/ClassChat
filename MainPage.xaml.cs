@@ -28,5 +28,10 @@
                 SignUpFrame.IsVisible = false;
             }
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.ContractsPage());
+        }
     }
 }

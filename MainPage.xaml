@@ -9,10 +9,10 @@
 
             <Grid  RowDefinitions="1.5*, 5*,1.5*" RowSpacing="5">
                 <Frame Grid.Row="0" HasShadow="True" >
-                <HorizontalStackLayout  Padding="0"  >
-                    <Label Text="Message" Margin="1" FontSize="70" FontFamily="FontIconRegular"/>
-                    <Label Text="Find everything you like here" Margin="9" VerticalOptions="End"/>
-                </HorizontalStackLayout>
+                    <HorizontalStackLayout  Padding="0"  >
+                        <Label Text="Message" Margin="1" FontSize="70" FontFamily="FontIconRegular"/>
+                        <Label Text="Find everything you like here" Margin="9" VerticalOptions="End"/>
+                    </HorizontalStackLayout>
                 </Frame>
                 <Frame x:Name="SignUpFrame" HasShadow="False" VerticalOptions="Center" Grid.Row="1" IsVisible="False">
                     <VerticalStackLayout x:Name="SignUpVstack" Spacing="10" >
@@ -26,7 +26,7 @@
                         <Entry Placeholder="Email"/>
                         <Entry Placeholder="Password" IsPassword="True"/>
                         <Entry Placeholder="Confirm Password" IsPassword="True"/>
-                        <Button Text="Create Account"/>
+                        <Button Text="Create Account" Clicked="Button_Clicked"/>
 
                     </VerticalStackLayout>
                     
